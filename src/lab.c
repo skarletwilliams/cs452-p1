@@ -59,6 +59,13 @@ extern "C"
   }
 
   int main() {
+    /** 9/26: My general plan to create the terminal is to create a do-while loop. First it will
+     * collect the input before an enter key is pressed, 'sanitize' the input,
+     * then deal with what the command was. If it is exit, then the terminal will exit.
+     * I need to review my general c programming class in order to remember how to do this,
+     * I know that I did create an interactive 'terminal' of sorts before, but alas my onyx was
+     * wiped from lack of use so I need to look for any lost local files or read docs, since it has 
+     * been at least a year since I coded in c. */ 
     
 
     printf("\nThis is the end\n");
