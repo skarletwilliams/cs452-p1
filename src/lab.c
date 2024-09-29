@@ -7,6 +7,9 @@
 #include <termios.h>
 #include <unistd.h>
 #include "lab.h"
+#include <readline/readline.h>
+#include <readline/history.h>
+
 
 #ifdef __cplusplus
 extern "C"
@@ -67,6 +70,14 @@ extern "C"
      * wiped from lack of use so I need to look for any lost local files or read docs, since it has 
      * been at least a year since I coded in c. */ 
     
+    char *line;
+    using_history();
+    while ((line=readline("$"))){
+        printf("%s\n",line);
+        add_history(line);
+        free(line);
+    }
+
 
     printf("\nThis is the end\n");
     return 0;
