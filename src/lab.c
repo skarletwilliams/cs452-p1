@@ -28,7 +28,13 @@ extern "C"
 
   char **cmd_parse(char const *line)
   {
+    char *no_trailing_line = trimwhite(line);
+    char parse_on[] = " ";
+    char *where_to_split = strstr(line, parse_on);
 
+
+    char **returnMe = {"hi", "hi"};
+    return returnMe;
   }
 
   void cmd_free(char ** line)
@@ -38,7 +44,8 @@ extern "C"
 
   char *trim_white(char *line)
   {
-
+    strncmp(line, " ", 1);
+    
   }
 
   bool do_builtin(struct shell *sh, char **argv)
@@ -48,39 +55,25 @@ extern "C"
 
   void sh_init(struct shell *sh)
   {
-
+    sh->shell_is_interactive;
+    sh->shell_pgid;
+    sh->shell_tmodes;
+    sh->shell_terminal;
+    sh->prompt;
   }
 
   void sh_destroy(struct shell *sh)
   {
-
+    sh->shell_is_interactive;
+    sh->shell_pgid;
+    sh->shell_tmodes;
+    sh->shell_terminal;
+    sh->prompt;
   }
 
   void parse_args(int argc, char **argv)
   {
 
-  }
-
-  int main() {
-    /** 9/26: My general plan to create the terminal is to create a do-while loop. First it will
-     * collect the input before an enter key is pressed, 'sanitize' the input,
-     * then deal with what the command was. If it is exit, then the terminal will exit.
-     * I need to review my general c programming class in order to remember how to do this,
-     * I know that I did create an interactive 'terminal' of sorts before, but alas my onyx was
-     * wiped from lack of use so I need to look for any lost local files or read docs, since it has 
-     * been at least a year since I coded in c. */ 
-    
-    char *line;
-    using_history();
-    while ((line=readline("$"))){
-        printf("%s\n",line);
-        add_history(line);
-        free(line);
-    }
-
-
-    printf("\nThis is the end\n");
-    return 0;
   }
 
 #ifdef __cplusplus
