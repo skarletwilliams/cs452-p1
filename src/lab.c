@@ -28,10 +28,35 @@ extern "C"
 
   char **cmd_parse(char const *line)
   {
-    char *no_trailing_line = trimwhite(line);
-    char parse_on[] = " ";
-    char *where_to_split = strstr(line, parse_on);
+    //Check to see if line is a pointer or not 
 
+    //Parse tokens based on white space
+
+    char *parse_on = " ";
+
+    /* My thoughts are to do a while loop where I copy strstr substrings into the token array,
+    But I should also use strcmp to check if there is another white space, and then only copy
+    from the start to where the next white space spot occurs 
+
+    They already said the maximum length is determined by something in the shell
+    */
+    /*int firstGap = strcmp(line, parse_on);
+    if(firstGap > 0) {
+      char *remainder = strstr(line, parse_on);
+      char *firstToken;
+      strncpy(firstToken, line, firstGap);
+      printf(firstToken);
+    }*/
+    
+    //strstr(line, parse_on);
+    //char *firstToken = strcpy();
+    //while(1) {
+
+    //}
+
+
+    //char *no_trailing_line = trimwhite(line);
+    //char *where_to_split = strstr(line, parse_on);
 
     char **returnMe = {"hi", "hi"};
     return returnMe;
